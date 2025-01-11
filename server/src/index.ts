@@ -18,7 +18,7 @@ app.use(cors());
 
 
 app.get('/hello', (req, res) => {
-    res.send("Hello vsim")
+    res.send("Hello vsim2")
 })
 
 
