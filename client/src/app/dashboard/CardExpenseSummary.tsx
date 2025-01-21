@@ -2,6 +2,7 @@ import {
   ExpenseByCategorySummary,
   useGetDashboardMetricsQuery,
 } from "@/state/api";
+import { TrendingUp } from "lucide-react";
 import React from "react";
 import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts";
 
@@ -81,6 +82,10 @@ const CardExpenseSummary = () => {
                   ${formattedTotalExpenses}
                 </span>
               </div>
+              <span className="flex items-center mt-2">
+                <TrendingUp className="mr-2 text-green-500" />
+                30%
+              </span>
             </div>
           </div>
         </>
