@@ -82,11 +82,41 @@ const CardExpenseSummary = () => {
                   ${formattedTotalExpenses}
                 </span>
               </div>
-              <span className="flex items-center mt-2">
-                <TrendingUp className="mr-2 text-green-500" />
-                30%
-              </span>
             </div>
+            <ul className="flex flex-col justify-around items-center xl:items-start py-5 gap-3">
+              {expenseCategories.map((entry, index) => (
+                <li
+                  key={`legend-${index}`}
+                  className="flex items-center text-xs"
+                >
+                  <span
+                    className="mr-2 w-3 h-3 rounded-full"
+                    style={{ backgroundColor: colors[index % colors.length] }}
+                  ></span>
+                  {entry.name}
+                </li>
+              ))}
+            </ul>
+          </div>
+          {/* FOOTER */}
+          <div>
+            <hr />
+            {expenseSummary && (
+              <div className="mt-3 flex justify-between items-center px-7 mb-4">
+                <div className="pt-2">
+                  <p className="text-sm">
+                    Average:{" "}
+                    <span className="font-semibold">
+                      ${expenseSummary.totalExpenses.toFixed(2)}
+                    </span>
+                  </p>
+                </div>
+                <span className="flex items-center mt-2">
+                  <TrendingUp className="mr-2 text-green-500" />
+                  30%
+                </span>
+              </div>
+            )}
           </div>
         </>
       )}
